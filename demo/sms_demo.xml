@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo noupdate="1">
+    <!-- SMS Client -->
+    <record id="sms_smsclient_1" model="sms.smsclient">
+        <field name="name">DigitalVirgo</field>
+        <field name="url">https://smsc.jmt.tn/sendSMS.php</field>
+        <field name="method">http</field>
+        <field name="users_id" eval="[(6, 0, [ref('base.user_admin')])]"/>
+    </record>
+
+    <record id="property_1" model="sms.smsclient.parms">
+        <field name="gateway_id" ref="sms_smsclient_1"/>
+        <field name="type">user</field>
+        <field name="name">LOGIN</field>
+    </record>
+
+    <record id="property_2" model="sms.smsclient.parms">
+        <field name="gateway_id" ref="sms_smsclient_1"/>
+        <field name="type">password</field>
+        <field name="name">PASS</field>
+    </record>
+    <record id="property_3" model="sms.smsclient.parms">
+        <field name="gateway_id" ref="sms_smsclient_1"/>
+        <field name="type">serviceid</field>
+        <field name="name">SRVID</field>
+    </record>
+    <record id="property_4" model="sms.smsclient.parms">
+        <field name="gateway_id" ref="sms_smsclient_1"/>
+        <field name="type">prid</field>
+        <field name="name">PRID</field>
+    </record>
+    <record id="property_5" model="sms.smsclient.parms">
+        <field name="gateway_id" ref="sms_smsclient_1"/>
+        <field name="type">sc</field>
+        <field name="name">SC</field>
+    </record>
+</odoo>
